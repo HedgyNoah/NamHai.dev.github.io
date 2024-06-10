@@ -1,0 +1,281 @@
+@font-face {
+  font-family: robotoBlack;
+  src: url(fonts/Roboto-Black.ttf);
+}
+@font-face {
+  font-family: robotoMedium;
+  src: url(fonts/Roboto-Medium.ttf);
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  color: #b2b298;
+  background: -webkit-linear-gradient(left, #000000, #202020);
+}
+
+h1 {
+  font-size: 3.5vw;
+  letter-spacing: 0.1vw;
+  font-family: robotoBlack;
+}
+h2 {
+  font-size: 2vw;
+  font-family: robotoMedium;
+  font-weight: 400;
+}
+p {
+  font-size: 1vw;
+  letter-spacing: 0.1vw;
+  font-family: robotoMedium;
+  font-weight: 100;
+}
+a {
+  text-decoration: none;
+  font-family: robotoMedium;
+}
+span {
+  color: #397d33;
+}
+
+#container3D canvas {
+  width: 100vw !important;
+  height: 100vh !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.wrapper3d {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  background: transparent;
+  z-index: 3;
+}
+
+nav #brand {
+  width: 8vw;
+  height: 8vw;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+header h2 {
+  z-index: 2;
+}
+
+header h1 {
+  z-index: 2;
+  font-size: 8.5vw;
+  letter-spacing: 0.5vw;
+  margin: 1vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  opacity: 0;
+  transform: translateX(-80%);
+  filter: blur(5px);
+  margin: 15vh 18vw;
+  transition: all 1s;
+}
+
+.show {
+  filter: blur(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.about h2 {
+  font-size: 1.2vw;
+  letter-spacing: 0.5vw;
+}
+
+.about a {
+  font-size: 2.2vw;
+  letter-spacing: 0.1vw;
+  transition: 0.3s;
+}
+
+.about a:hover {
+  color: #397d33;
+  font-size: 2.3vw;
+}
+
+.about img {
+  display: inline-block;
+  width: 7vw;
+  height: 7vw;
+}
+
+#certificate {
+  display: none;
+  right: 0;
+  position: absolute;
+  width: 60vw;
+  height: 40vh;
+  border-radius: 2vw;
+  box-shadow: -10px 10px 100px -5px #000000;
+  margin-top: -60vh;
+}
+
+.about .linkcerti:hover ~ #certificate {
+  display: block;
+}
+
+.video {
+  display: none;
+  position: absolute;
+  transform: translate(60%, -40%);
+  height: 40vh;
+  width: 50vw;
+}
+
+.back {
+  display: none;
+  position: absolute;
+  top: 25vh;
+  right: 20vw;
+  background-color: #202020;
+  box-shadow: -10px 10px 100px -5px #000000;
+  border-radius: 100px;
+  border: 0.1vw solid #b2b298;
+  color: #b2b298;
+  font-family: robotoMedium;
+  font-size: 1vw;
+  width: 4vw;
+  height: 4vw;
+}
+
+.backcerti {
+  display: none;
+  margin: auto;
+  background-color: #202020;
+  border-radius: 100px;
+  border: 0.1vw solid #b2b298;
+  color: #b2b298;
+  font-family: robotoMedium;
+  font-size: 2vw;
+  width: 5vw;
+  height: 5vw;
+}
+
+.appear {
+  display: block !important;
+}
+
+.link:hover ~ .video {
+  display: block;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2vw;
+}
+
+@media (prefers-reduced-motion) {
+  .about {
+    transition: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 3vw;
+  }
+  .about h2 {
+    font-size: 2.5vw;
+  }
+  p {
+    font-size: 1.8vw;
+  }
+  .about a {
+    font-size: 3.5vw;
+  }
+  .about a:hover {
+    font-size: 3.8vw;
+  }
+  #certificate {
+    right: 0;
+    width: 90vw;
+    transform: translateX(15%);
+  }
+  .about img {
+    width: 10vw;
+    height: 10vw;
+  }
+  .video {
+    transform: translate(-17%, -140%);
+    height: 40vh;
+    width: 100vw;
+  }
+  .back {
+    width: 9vw;
+    height: 9vw;
+    font-size: 4.5vw;
+    right: 5vw;
+    top: 10vh;
+  }
+  .backcerti {
+    font-size: 3vw;
+    width: 8vw;
+    height: 8vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .video {
+    transform: translate(-15%, -155%);
+    height: 30vh;
+    width: 90vw;
+  }
+  .back {
+    width: 9vw;
+    height: 9vw;
+    font-size: 4.5vw;
+    right: 10vw;
+    top: 10vh;
+  }
+  .backcerti {
+    width: 9vw;
+    height: 9vw;
+    font-size: 4.5vw;
+  }
+}
