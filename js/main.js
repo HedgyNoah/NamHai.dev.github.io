@@ -28,6 +28,12 @@ backcerti.addEventListener("click", () => {
   certificate.classList.remove("appear");
 });
 
+const enter = document.getElementById("enter");
+const curtain = document.getElementById("curtain");
+enter.addEventListener("click", () => {
+  curtain.style.display = "none";
+});
+
 links.forEach((link, index) => {
   link.addEventListener("click", () => {
     removeClass();
