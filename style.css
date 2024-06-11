@@ -228,6 +228,75 @@ main {
   gap: 2vw;
 }
 
+.curtain {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: -webkit-linear-gradient(left, #000000, #202020);
+}
+
+.curtain button {
+  border-radius: 2vw;
+  width: 10vw;
+  height: 4vw;
+  color: #b2b298;
+  background: #000000;
+  font-size: 1.5vw;
+  font-family: robotoMedium;
+  border: 0.2vw solid #b2b298;
+  transition: all 0.25s;
+}
+
+.curtain button:hover {
+  background: #b2b298;
+  color: #000000;
+}
+
+.bar {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  height: 5vh;
+  border-radius: 2vw;
+  border: 0.2vw solid #b2b298;
+  background: transparent;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.bar::before {
+  content: "";
+  position: absolute;
+  background: #b2b298;
+  border-radius: 2vw;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: fill 4s forwards;
+  animation-delay: 1000ms;
+}
+
+@keyframes fill {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 @media (prefers-reduced-motion) {
   .about {
     transition: none;
@@ -235,6 +304,20 @@ main {
 }
 
 @media screen and (max-width: 768px) {
+  nav #brand {
+    width: 12vw;
+    height: 12vw;
+  }
+  .bar {
+    height: 3vh;
+  }
+  .curtain button {
+    border-radius: 3vw;
+    width: 12vw;
+    height: 5vw;
+    font-size: 2vw;
+    border: 0.3vw solid #b2b298;
+  }
   h2 {
     font-size: 3vw;
   }
@@ -279,6 +362,16 @@ main {
 }
 
 @media screen and (max-width: 480px) {
+  .bar {
+    height: 2vh;
+  }
+  .curtain button {
+    border-radius: 3.5vw;
+    width: 20vw;
+    height: 7vw;
+    font-size: 3vw;
+    border: 0.4vw solid #b2b298;
+  }
   .video {
     transform: translate(-15%, -155%);
     height: 30vh;
