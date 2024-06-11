@@ -7,6 +7,11 @@
   src: url(fonts/Roboto-Medium.ttf);
 }
 
+:root {
+  --h1size: 3.5vw;
+  --h2size: 2vw;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -24,12 +29,12 @@ body {
 }
 
 h1 {
-  font-size: 3.5vw;
+  font-size: var(--h1size);
   letter-spacing: 0.1vw;
   font-family: robotoBlack;
 }
 h2 {
-  font-size: 2vw;
+  font-size: var(--h2size);
   font-family: robotoMedium;
   font-weight: 400;
 }
@@ -115,6 +120,19 @@ main {
   transition: all 1s;
 }
 
+.about:nth-child(5) {
+  align-self: center;
+  align-items: center;
+}
+
+.about:nth-child(5) h1 {
+  font-size: calc(var(--h1size) * 1.6);
+}
+
+.about:nth-child(5) h2 {
+  font-size: calc(var(--h2size) * 1.1);
+}
+
 .show {
   filter: blur(0);
   transform: translateX(0);
@@ -122,7 +140,7 @@ main {
 }
 
 .about h2 {
-  font-size: 1.2vw;
+  font-size: calc(var(--h2size) * 3 / 5);
   letter-spacing: 0.5vw;
 }
 
